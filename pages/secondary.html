@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ATS House Teachers Directory</title>
+
+  <!-- UIkit -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.19.4/dist/css/uikit.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.19.4/dist/js/uikit.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.19.4/dist/js/uikit-icons.min.js" defer></script>
+
+  <!-- Fonts & page styles -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/secondary.css" />
+</head>
+<body class="uk-background-muted uk-padding-small">
+
+  <!-- Navbar compartida -->
+  <header class="site-nav">
+    <nav>
+      <a class="brand" href="../index.html">ATS</a>
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+      <ul class="nav-links">
+        <li><a href="../index.html" data-page="home">Home</a></li>
+        <li><a href="./secondary.html" data-page="secondary">Secondary</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="uk-container uk-container-large">
+
+    <!-- Header -->
+    <header class="uk-text-center uk-card uk-card-default uk-card-body uk-border-rounded uk-box-shadow-medium uk-margin">
+      <div class="logo-slot" aria-label="School logo placeholder">
+        <img src="../img/image_2025-10-07_121121532.png" alt="ATS Logo" class="uk-border-rounded" style="max-width:100%;max-height:100%;">
+      </div>
+      <h1 id="mainTitle" class="uk-margin-small-top uk-margin-remove-bottom">Meet Our House Teachers</h1>
+      <p class="uk-text-meta uk-margin-remove-top">Directory</p>
+    </header>
+
+    <!-- Tabs + Switcher -->
+    <div class="uk-card uk-card-default uk-border-rounded uk-box-shadow-medium">
+      <div class="uk-card-body uk-padding-remove">
+        <ul class="uk-tab uk-flex-center uk-tab-bottom-border" uk-tab="connect: #house-switcher">
+          <li><a href="#" class="aegir-color">Aegir House</a></li>
+          <li><a href="#" class="kai-color">Kai House</a></li>
+          <li><a href="#" class="nerida-color">Nerida House</a></li>
+          <li><a href="#" class="pelagia-color">Pelagia House</a></li>
+        </ul>
+
+        <ul id="house-switcher" class="uk-switcher uk-padding">
+
+          <!-- AEGIR -->
+          <li>
+            <div class="uk-flex uk-flex-between uk-flex-middle uk-margin-small-bottom">
+              <h2 class="uk-margin-remove aegir-color">Aegir House</h2>
+              <div class="house-emblem aegir-bg">
+                <div class="house-logo-slot" aria-label="Aegir logo placeholder">
+                  <img src="../img/house-aegir.png" alt="Aegir House" style="max-width:100%;max-height:100%;object-fit:contain;" />
+                </div>
+              </div>
+            </div>
+
+            <div class="uk-grid-small uk-child-width-1-1 uk-flex-middle uk-margin-bottom" uk-grid>
+              <div>
+                <form class="uk-search uk-search-default uk-width-1-1" role="search">
+                  <span uk-search-icon></span>
+                  <input id="search-aegir" class="uk-search-input" type="search" placeholder="Search name or email…">
+                </form>
+              </div>
+              <div class="uk-text-right">
+                <label><input id="masters-aegir" class="uk-checkbox" type="checkbox"> House Masters only</label>
+              </div>
+            </div>
+
+            <div class="uk-card uk-card-small uk-card-default uk-border-rounded uk-margin">
+              <div class="uk-card-header">
+                <h3 class="uk-card-title uk-margin-remove">House Values & Quotes</h3>
+              </div>
+              <div id="quotes-aegir" class="uk-card-body uk-padding-small"></div>
+            </div>
+
+            <div id="grid-aegir" class="uk-grid-match uk-child-width-1-1 uk-child-width-1-2@s uk-child-width-1-3@m" uk-grid></div>
+          </li>
+
+          <!-- KAI -->
+          <li>
+            <div class="uk-flex uk-flex-between uk-flex-middle uk-margin-small-bottom">
+              <h2 class="uk-margin-remove kai-color">Kai House</h2>
+              <div class="house-emblem kai-bg">
+                <div class="house-logo-slot" aria-label="Kai logo placeholder">
+                  <img src="../img/house-kai.png" alt="Kai House" style="max-width:100%;max-height:100%;object-fit:contain;" />
+                </div>
+              </div>
+            </div>
+
+            <div class="uk-grid-small uk-child-width-1-1 uk-flex-middle uk-margin-bottom" uk-grid>
+              <div>
+                <form class="uk-search uk-search-default uk-width-1-1" role="search">
+                  <span uk-search-icon></span>
+                  <input id="search-kai" class="uk-search-input" type="search" placeholder="Search name or email…">
+                </form>
+              </div>
+              <div class="uk-text-right">
+                <label><input id="masters-kai" class="uk-checkbox" type="checkbox"> House Masters only</label>
+              </div>
+            </div>
+
+            <div class="uk-card uk-card-small uk-card-default uk-border-rounded uk-margin">
+              <div class="uk-card-header">
+                <h3 class="uk-card-title uk-margin-remove">House Values & Quotes</h3>
+              </div>
+              <div id="quotes-kai" class="uk-card-body uk-padding-small"></div>
+            </div>
+
+            <div id="grid-kai" class="uk-grid-match uk-child-width-1-1 uk-child-width-1-2@s uk-child-width-1-3@m" uk-grid></div>
+          </li>
+
+          <!-- NERIDA -->
+          <li>
+            <div class="uk-flex uk-flex-between uk-flex-middle uk-margin-small-bottom">
+              <h2 class="uk-margin-remove nerida-color">Nerida House</h2>
+              <div class="house-emblem nerida-bg">
+                <div class="house-logo-slot" aria-label="Nerida logo placeholder">
+                  <img src="../img/house-nerida.png" alt="Nerida House" style="max-width:100%;max-height:100%;object-fit:contain;" />
+                </div>
+              </div>
+            </div>
+
+            <div class="uk-grid-small uk-child-width-1-1 uk-flex-middle uk-margin-bottom" uk-grid>
+              <div>
+                <form class="uk-search uk-search-default uk-width-1-1" role="search">
+                  <span uk-search-icon></span>
+                  <input id="search-nerida" class="uk-search-input" type="search" placeholder="Search name or email…">
+                </form>
+              </div>
+              <div class="uk-text-right">
+                <label><input id="masters-nerida" class="uk-checkbox" type="checkbox"> House Masters only</label>
+              </div>
+            </div>
+
+            <div class="uk-card uk-card-small uk-card-default uk-border-rounded uk-margin">
+              <div class="uk-card-header">
+                <h3 class="uk-card-title uk-margin-remove">House Values & Quotes</h3>
+              </div>
+              <div id="quotes-nerida" class="uk-card-body uk-padding-small"></div>
+            </div>
+
+            <div id="grid-nerida" class="uk-grid-match uk-child-width-1-1 uk-child-width-1-2@s uk-child-width-1-3@m" uk-grid></div>
+          </li>
+
+          <!-- PELAGIA -->
+          <li>
+            <div class="uk-flex uk-flex-between uk-flex-middle uk-margin-small-bottom">
+              <h2 class="uk-margin-remove pelagia-color">Pelagia House</h2>
+              <div class="house-emblem pelagia-bg">
+                <div class="house-logo-slot" aria-label="Pelagia logo placeholder">
+                  <img src="../img/house-pelagia.png" alt="Pelagia House" style="max-width:100%;max-height:100%;object-fit:contain;" />
+                </div>
+              </div>
+            </div>
+
+            <div class="uk-grid-small uk-child-width-1-1 uk-flex-middle uk-margin-bottom" uk-grid>
+              <div>
+                <form class="uk-search uk-search-default uk-width-1-1" role="search">
+                  <span uk-search-icon></span>
+                  <input id="search-pelagia" class="uk-search-input" type="search" placeholder="Search name or email…">
+                </form>
+              </div>
+              <div class="uk-text-right">
+                <label><input id="masters-pelagia" class="uk-checkbox" type="checkbox"> House Masters only</label>
+              </div>
+            </div>
+
+            <div class="uk-card uk-card-small uk-card-default uk-border-rounded uk-margin">
+              <div class="uk-card-header">
+                <h3 class="uk-card-title uk-margin-remove">House Values & Quotes</h3>
+              </div>
+              <div id="quotes-pelagia" class="uk-card-body uk-padding-small"></div>
+            </div>
+
+            <div id="grid-pelagia" class="uk-grid-match uk-child-width-1-1 uk-child-width-1-2@s uk-child-width-1-3@m" uk-grid></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="uk-text-center uk-card uk-card-default uk-card-body uk-border-rounded uk-box-shadow-small uk-margin">
+      <p class="uk-text-meta uk-margin-remove">
+        <span id="schoolName">The American School of Tampico</span> – <span id="footerText">House System 2025</span>
+      </p>
+    </footer>
+  </div>
+
+  <!-- Modal inicial -->
+  <div id="welcome-modal" class="uk-flex-top" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical uk-border-rounded">
+      <button class="uk-modal-close-default" type="button" uk-close aria-label="Close modal"></button>
+      <h2 class="uk-modal-title">Welcome to the ATS House Teachers Directory</h2>
+      <p>
+        These are the integrated teachers who will help strengthen the values, spirit, and teamwork of each House.
+        Explore the tabs to meet your mentors and House Masters, and read quotes that capture the character of each House.
+      </p>
+      <div class="uk-text-right">
+        <button class="uk-button uk-button-primary" type="button" onclick="UIkit.modal('#welcome-modal').hide()">Explore teachers</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../assets/js/secondary.js" defer></script>
+</body>
+</html>

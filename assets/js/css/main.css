@@ -1,0 +1,127 @@
+:root{
+  --bg:#0b0e16;
+  --panel:#101522;
+  --text:#eadfd1;
+  --muted:#b7ab9a;
+  --accent:#d4af37;     /* dorado */
+  --accent2:#8fb3ff;    /* azul tenue */
+  --border:#2a3142;
+  --danger:#ef4444;
+  --carousel-width: 520px;
+  --carousel-height: 200px;
+  --carousel-speed: 12s;
+}
+
+/* === Overrides ligeros UIkit para que combine con tu tema === */
+.uk-button-primary { background: var(--accent); border-color: var(--accent); color:#1a1402; font-weight:800; }
+.uk-button-primary:hover { filter: brightness(1.06); }
+.uk-input { background: var(--panel); color: var(--text); border:1px solid var(--border); }
+.uk-input::placeholder { color: #9aa3b2; }
+
+/* ==== NAVBAR (compartida) ==== */
+.site-nav { position: sticky; top: 0; background:#0e1527; border-bottom:1px solid var(--border); z-index:1000; }
+.site-nav nav { max-width: 1100px; margin: 0 auto; display:flex; align-items:center; gap:1rem; padding: .6rem 1rem; }
+.site-nav .brand { font-weight:800; text-decoration:none; color: var(--accent); font-family:"Cinzel", serif; }
+.site-nav .nav-toggle { display:none; background:none; border:0; font-size:1.25rem; color:var(--text); }
+.site-nav .nav-links { list-style:none; display:flex; gap:1rem; margin-left:auto; padding:0; }
+.site-nav .nav-links a { text-decoration:none; padding:.25rem .6rem; border-radius:.5rem; color:var(--text); }
+.site-nav .nav-links a.active { background:#101a33; }
+@media (max-width: 720px) {
+  .site-nav .nav-toggle { display:block; margin-left:auto; }
+  .site-nav .nav-links { display:none; flex-direction:column; width:100%; margin-top:.5rem; }
+  .site-nav .nav-links.open { display:flex; }
+}
+
+/* ---- ATS emblem ---- */
+.main-logo { display:flex; justify-content:center; align-items:center; margin: 10px auto 0; }
+.main-logo-img { width:50%; height:50%; object-fit:contain; filter: drop-shadow(0 6px 10px rgba(0,0,0,.35)); }
+
+*{ box-sizing:border-box; }
+html,body{ height:100%; margin:0; }
+body{
+  background:
+    radial-gradient(1200px 620px at 50% -10%, #0e1424 10%, #0a0f1a 60%),
+    var(--bg);
+  color:var(--text);
+  font: 16px/1.6 "Cinzel", "IM Fell English SC", Georgia, Garamond, serif;
+}
+
+/* ----- Hero ----- */
+.hero{ max-width:1100px; margin:28px auto 0; padding:0 16px; text-align:center; padding-top:.25rem; }
+.title{
+  margin:0;
+  font-family: "Cinzel", serif;
+  font-weight: 800;
+  font-size: clamp(1.8rem, 4.6vw, 3rem);
+  letter-spacing: .05em;
+  color: var(--accent);
+  text-shadow: 0 2px 0 #000, 0 8px 20px rgba(0,0,0,.5);
+}
+
+/* ----- Main ----- */
+.container{ max-width:900px; margin: 18px auto 40px; padding: 0 16px; }
+
+.lookup{
+  background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+  border:1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.03), 0 14px 40px rgba(0,0,0,.25);
+}
+.input-row{ display:flex; gap:10px; align-items:center; justify-content:center; flex-wrap:wrap; }
+.suggest-wrap{ position:relative; flex:1 1 380px; min-width:280px; }
+
+/* input ahora usa .uk-input, mantenemos estilos complementarios */
+.suggest-list{
+  position:absolute; left:0; right:0; top:100%; z-index:10;
+  background:#0d1322; border:1px solid var(--border); border-top:0;
+  border-radius: 0 0 10px 10px; max-height: 260px; overflow:auto;
+  box-shadow: 0 14px 38px rgba(0,0,0,.35);
+}
+.suggest-list[hidden]{ display:none; }
+.suggest-item{ padding:10px 12px; cursor:pointer; border-top:1px solid #0a0f1a; }
+.suggest-item:hover, .suggest-item[aria-selected="true"]{ background:#101a33; }
+
+.btn{ padding: 12px 16px; border-radius: 10px; font-weight:800; font-family: "Cinzel", serif; text-transform: uppercase; letter-spacing:.05em; }
+.btn.secondary{ background:transparent; color:var(--text); border:1px solid var(--border); }
+
+.hint{ text-align:center; color:var(--muted); margin:.5rem 0 0; }
+.error{ text-align:center; color: var(--danger); margin:.5rem 0 0; }
+
+.result{
+  margin-top: 18px; text-align:center;
+  background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+  border:1px solid var(--border);
+  border-radius: 14px; padding: 22px;
+  animation: fadeIn .4s ease-out both;
+}
+.house-img{ max-width: 260px; width: 60%; height:auto; filter: drop-shadow(0 10px 16px rgba(0,0,0,.35)); }
+.student-name{ margin:.7rem 0 0; font-size: clamp(1.3rem, 3.2vw, 2rem); }
+.house-name{ margin:.25rem 0 0; color: var(--accent2); font-size: clamp(1.1rem, 2.2vw, 1.6rem); }
+.house-intro{ margin:.45rem auto 1rem; color: var(--muted); max-width: 46ch }
+
+.site-footer{ max-width:900px; margin:20px auto 40px; padding:0 16px; text-align:center; color: var(--muted); }
+
+/* ----- Modal con carrusel ----- */
+.modal[hidden]{ display:none !important; }
+.modal{ position: fixed; inset: 0; z-index: 50; display:grid; place-items:center; }
+.modal-backdrop{ position:absolute; inset:0; background:rgba(0,0,0,.55); backdrop-filter: blur(2px); }
+.modal-content{
+  position:relative; z-index:1; width:min(92vw, 640px);
+  border-radius:16px; border:1px solid var(--border);
+  background: #0e1527; padding: 22px; text-align:center;
+  box-shadow: 0 24px 80px rgba(0,0,0,.35); animation: pop .2s ease-out both;
+}
+.modal-title{ margin:0 0 12px; font-weight:900; letter-spacing:.03em; color: var(--accent); font-family: "Cinzel", serif; }
+
+.carousel{ position: relative; width: var(--carousel-width); height: var(--carousel-height); margin: 8px auto 12px; overflow: hidden; border:1px solid var(--border); border-radius: 12px; background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01)); }
+.carousel-track{ position:absolute; left:0; top:0; bottom:0; display:flex; gap: 28px; align-items:center; padding: 0 12px; animation: slideLoop var(--carousel-speed) linear infinite; }
+.carousel-item{ width: 140px; height: 140px; object-fit:contain; filter: drop-shadow(0 8px 14px rgba(0,0,0,.45)); }
+
+@keyframes slideLoop{ 0%{ transform: translateX(0) } 100%{ transform: translateX(-50%) } }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(6px) } to { opacity: 1; transform: translateY(0) } }
+@keyframes pop { from { opacity:0; transform: translateY(6px) scale(.98) } to { opacity:1; transform: translateY(0) scale(1) } }
+
+@media (max-width:760px){
+  :root{ --carousel-width: 86vw; --carousel-height: 180px; }
+}

@@ -1,1 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ATS HOUSE SELECTION</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=IM+Fell+English+SC&display=swap" rel="stylesheet">
+
+  <!-- UIkit (añadido para unificar con la secundaria) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.19.4/dist/css/uikit.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.19.4/dist/js/uikit.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.19.4/dist/js/uikit-icons.min.js" defer></script>
+
+  <!-- CSS renombrado -->
+  <link rel="stylesheet" href="./assets/css/main.css" />
+</head>
+<body>
+
+  <!-- Navbar compartida -->
+  <header class="site-nav">
+    <nav>
+      <a class="brand" href="./index.html">ATS</a>
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+      <ul class="nav-links">
+        <li><a href="./index.html" data-page="home">Home</a></li>
+        <li><a href="./pages/secondary.html" data-page="secondary">Secondary</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <header class="hero uk-container">
+    <h1 class="title">ATS HOUSE SELECTION</h1>
+
+    <div class="main-logo">
+      <img src="./img/image_2025-10-07_121121532.png" alt="ATS emblem" class="main-logo-img">
+    </div>
+
+    <h2>A HOUSE CHOOSES US, BUT WE MAKE IT OUR OWN</h2>
+  </header>
+
+  <!-- Contenido principal -->
+  <main class="container uk-container">
+    <form id="lookupForm" class="lookup uk-margin-small-top" autocomplete="off">
+      <div class="input-row">
+        <div class="suggest-wrap">
+          <input id="nameInput" class="uk-input" type="search" placeholder="Type your name..." aria-autocomplete="list" aria-expanded="false" aria-owns="suggestList" required />
+          <ul id="suggestList" class="suggest-list" role="listbox" hidden></ul>
+        </div>
+        <button class="btn uk-button uk-button-primary" type="submit">Reveal my House</button>
+      </div>
+      <p id="hint" class="hint uk-text-meta">Type at least 4 letters to see suggestions.</p>
+      <p id="error" class="error" role="alert" hidden>Name not found. Check the spelling or pick a suggestion.</p>
+    </form>
+
+    <!-- Resultado -->
+    <section id="result" class="result" hidden>
+      <img id="houseImg" class="house-img" alt="House crest" />
+      <h2 id="studentName" class="student-name"></h2>
+      <h3 id="houseName" class="house-name"></h3>
+      <p id="houseIntro" class="house-intro"></p>
+      <button id="againBtn" class="btn secondary uk-button uk-button-default" type="button">Search another name</button>
+    </section>
+  </main>
+
+  <footer class="site-footer uk-container">
+    <small>Data source: <code>houses_from_toJSON_template1_latest.json</code></small>
+  </footer>
+
+  <!-- Modal de carga (con tu carrusel) -->
+  <div id="loaderModal" class="modal" hidden aria-live="polite" aria-modal="true" role="dialog">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content" role="document">
+      <h2 class="modal-title">Preparing your House reveal…</h2>
+
+      <div class="carousel">
+        <div class="carousel-track">
+          <img src="./img/house-aegir.png" alt="Aegir" class="carousel-item">
+          <img src="./img/house-pelagia.png" alt="Pelagia" class="carousel-item">
+          <img src="./img/house-kai.png" alt="Kai" class="carousel-item">
+          <img src="./img/house-nerida.png" alt="Nerida" class="carousel-item">
+        </div>
+      </div>
+
+      <p id="loaderMsg" class="loading-text">#analyzing your profile…</p>
+    </div>
+  </div>
+
+  <!-- JS renombrado -->
+  <script src="./assets/js/main.js" defer></script>
+</body>
+</html>
 
